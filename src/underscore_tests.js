@@ -193,13 +193,12 @@ return true;
       }
 }
     for(var prop in collection){
-if (!iterator(collection[prop])){
- return false;
-}
-
-}
-return true;
-}
+      if (iterator(collection[prop])){
+          return true;
+        }
+      }
+  return false;
+};
 
   /**
    * OBJECTS
